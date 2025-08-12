@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Make Appointment - Daffodil Hospital</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f9ff;
+      margin: 0;
+      padding: 0 1rem 3rem;
+      color: #333;
+    }
+    header {
+      background: #004aad;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo img {
+      height: 40px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
+    }
+    h1, h2 {
+      color: #004aad;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+    }
+    ul li {
+      margin-bottom: 0.7rem;
+      line-height: 1.3;
+    }
+    ul li strong {
+      display: block;
+      color: #00307d;
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    input, select, textarea {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #004aad;
+      box-shadow: 0 0 5px #004aad;
+    }
+    button {
+      background: #004aad;
+      color: white;
+      font-weight: 700;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 1.1rem;
+      max-width: 200px;
+      align-self: flex-start;
+    }
+    button:hover {
+      background: #00307d;
+    }
+    .success-message {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      border-radius: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo3.png" alt="Daffodil Hospital Logo" />
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="appointment.html">Appointment</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Make an Appointment</h1>
+
+    <h2>Before Make an Appointment first see Our Services</h2>
+    <p>At <strong>Daffodil Hospital</strong>, we offer a wide range of medical services to cater to the diverse health needs of our community. Our state-of-the-art facilities and highly qualified staff ensure that you receive the best possible care.</p>
+    
+    <h2>Specialized Departments</h2>
+    <ul>
+      <li><strong>Cardiology:</strong> Comprehensive heart care including diagnostics, interventions, and rehabilitation.</li>
+      <li><strong>Neurology:</strong> Treatment of neurological disorders such as stroke, epilepsy, and neurodegenerative diseases.</li>
+      <li><strong>Orthopedics:</strong> Care for bone, joint, and muscular conditions including surgeries and physical therapies.</li>
+      <li><strong>Pediatrics:</strong> Full spectrum child healthcare from newborns to adolescents.</li>
+      <li><strong>Oncology:</strong> Advanced cancer diagnosis, chemotherapy, radiation, and supportive care.</li>
+      <li><strong>Gynecology & Obstetrics:</strong> Women’s health, pregnancy care, and childbirth services.</li>
+      <li><strong>Dermatology:</strong> Diagnosis and treatment of skin conditions and diseases.</li>
+      <li><strong>Gastroenterology:</strong> Care for digestive system disorders including endoscopy services.</li>
+      <li><strong>Pulmonology:</strong> Treatment of respiratory diseases like asthma, COPD, and lung infections.</li>
+      <li><strong>Nephrology:</strong> Kidney health, dialysis services, and treatment of renal disorders.</li>
+      <li><strong>Endocrinology:</strong> Management of hormonal disorders including diabetes and thyroid conditions.</li>
+      <li><strong>Urology:</strong> Urinary tract and male reproductive health services.</li>
+      <li><strong>ENT (Ear, Nose & Throat):</strong> Diagnosis and treatment of head and neck conditions.</li>
+      <li><strong>Ophthalmology:</strong> Eye care services including surgeries, diagnostics, and vision correction.</li>
+      <li><strong>Psychiatry & Mental Health:</strong> Counseling, therapy, and psychiatric care.</li>
+      <li><strong>Physical Medicine & Rehabilitation:</strong> Support for post-injury and chronic condition recovery.</li>
+      <li><strong>Anesthesiology:</strong> Pain management and anesthesia services for surgical procedures.</li>
+    </ul>
+
+    <h2>Diagnostic Services</h2>
+    <ul>
+      <li><strong>Laboratory Testing:</strong> Comprehensive blood tests, pathology, microbiology, and biochemistry with rapid turnaround.</li>
+      <li><strong>Digital X-Ray:</strong> High-resolution imaging for bones and chest.</li>
+      <li><strong>Magnetic Resonance Imaging (MRI):</strong> Detailed scans for soft tissue, brain, spine, joints, and organs.</li>
+      <li><strong>Computed Tomography (CT) Scan:</strong> Cross-sectional imaging for trauma, tumors, and complex diagnoses.</li>
+      <li><strong>Ultrasound:</strong> Non-invasive imaging for abdomen, pelvic, cardiac, and vascular studies.</li>
+      <li><strong>Electrocardiogram (ECG/EKG):</strong> Heart electrical activity monitoring.</li>
+      <li><strong>Echocardiography:</strong> Ultrasound of the heart to assess function and structure.</li>
+      <li><strong>Pulmonary Function Tests:</strong> Assess lung capacity and breathing issues.</li>
+      <li><strong>Endoscopy & Colonoscopy:</strong> Visual examination of the digestive tract.</li>
+      <li><strong>Mammography:</strong> Breast cancer screening.</li>
+      <li><strong>Bone Densitometry:</strong> Assessment for osteoporosis.</li>
+      <li><strong>Neurological Studies:</strong> EEG and nerve conduction tests for brain and nerve function.</li>
+    </ul>
+
+    <h2>Book Your Appointment</h2>
+    <form id="appointmentForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required placeholder="Your full name" />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required placeholder="Your email" />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required placeholder="Your phone number" pattern="[0-9]{10,15}" />
+
+      <label for="department">Department</label>
+      <select id="department" name="department" required>
+        <option value="">Select Department</option>
+        <option>Cardiology</option>
+        <option>Neurology</option>
+        <option>Orthopedics</option>
+        <option>Pediatrics</option>
+        <option>Oncology</option>
+        <option>Gynecology & Obstetrics</option>
+        <option>Dermatology</option>
+        <option>Gastroenterology</option>
+        <option>Pulmonology</option>
+        <option>Nephrology</option>
+        <option>Endocrinology</option>
+        <option>Urology</option>
+        <option>ENT</option>
+        <option>Ophthalmology</option>
+        <option>Psychiatry & Mental Health</option>
+        <option>Physical Medicine & Rehabilitation</option>
+        <option>Anesthesiology</option>
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required min="" />
+
+      <label for="message">Additional Notes (optional)</label>
+      <textarea id="message" name="message" rows="4" placeholder="Any special requirements or info"></textarea>
+
+      <button type="submit">Submit Appointment</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      Thank you! Your appointment request has been received. We will contact you soon.
+    </div>
+  </main>
+
+  <script>
+    // Set minimum date for appointment to today
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+
+    // Form submission handler (just demo, no backend)
+    const form = document.getElementById('appointmentForm');
+    const successMsg = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you can add AJAX or API call to send form data to server
+      // For demo, just show success message
+      successMsg.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
