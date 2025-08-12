@@ -128,7 +128,7 @@
   <main>
     <h1>Make an Appointment</h1>
 
-    <h2>Before Make an Appointment first see Our Services</h2>
+    <h2>Before Make an <a href="#book">Appointment</a> first see Our Services</h2>
     <p>At <strong>Daffodil Hospital</strong>, we offer a wide range of medical services to cater to the diverse health needs of our community. Our state-of-the-art facilities and highly qualified staff ensure that you receive the best possible care.</p>
     
     <h2>Specialized Departments</h2>
@@ -168,7 +168,7 @@
       <li><strong>Neurological Studies:</strong> EEG and nerve conduction tests for brain and nerve function.</li>
     </ul>
 
-    <h2>Book Your Appointment</h2>
+    <h2 id="book">Book Your Appointment</h2>
     <form id="appointmentForm">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required placeholder="Your full name" />
@@ -233,5 +233,6 @@
       form.reset();
     });
   </script>
+  
 </body>
 </html>
