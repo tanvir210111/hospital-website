@@ -25,75 +25,102 @@ html{
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
 }
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+/* HEADER STYLES */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #fff;
+  color: #0d6efd;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: nowrap;
+}
 
-    display: flex;
+/* Logo smaller */
+.logo img {
+  height: 30px;
+  width: 50px;
+}
+
+/* Header title */
+.header-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0d6efd;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+/* Navbar */
+nav.navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mobile toggle */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  flex-direction: column;
+  width: 200px;
+  z-index: 200;
+}
+
+.mobile-nav a {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+/* Hover effect */
+.mobile-nav a:hover {
+  background: #0d6efd;
+  color: #fff;
+}
+
+/* Mobile responsive */
+@media(max-width: 900px){
+  header {
     justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 7%;
-    width: 100%;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-    z-index: 1000;
-    background-color: white !important;
-
-}
-.logo{
-    width: 150px;
-}
-.logo img{
-    width: 100%;
-}
-.navbar a{
-    color: var(--textcolor);
-    font-size: 1.7rem;
-    margin: 1rem;
-    position: relative;
-    transition: 0.5s;
-}
-.navbar a:hover{
-    color: var(--maincolor);
-}
-
-.navbar a::after{
-    content: "";
-    background-color: var(--maincolor);
-    width: 0;
-    position: absolute;
-    height: 0.2rem;
-    left: 0;
-    margin-top: 0.5rem;
-    top: 100%;
-    transition: 0.5s;
-}
-.navbar a:hover::after{
-    width: 100%;
-}
-
-#menu-bars{
-    color: var(--textcolor);
-    font-size: 2.5rem;
-    cursor: pointer;
-    margin-right: 1rem;
+  }
+  
+  nav.navbar {
     display: none;
-}
-#menu-bars:hover{
-    color: var(--maincolor);
-}
-.right-icons .btn{
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
 
-    padding: 1.2rem 2rem;
-    font-size: 1.7rem;
-    background: var(--maincolor);
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-}
-.right-icons .btn:hover{
-    background-color: var(--secondcolor);
+  /* Center logo and title together vertically */
+  .logo,
+  .header-title {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Make header take full width */
+  header > * {
+    flex: 0 0 auto;
+  }
 }
 
 /* header section ended */
