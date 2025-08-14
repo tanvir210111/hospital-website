@@ -12,28 +12,45 @@
       color: #333;
       line-height: 1.7;
     }
+
+    /* Header Styling */
     header {
       background: linear-gradient(90deg, #009688, #00796b);
-      padding: 25px;
+      padding: 10px 15px;
       color: white;
-
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 120px; /* Adjust height as needed */
-      text-align: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 70px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+
+    .back-btn {
+      position: absolute;
+      left: 15px;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      padding: 6px 12px;
+      border: 1px solid white;
+      border-radius: 4px;
+      transition: 0.3s;
     }
-    header p {
-      margin: 10px 0 0 0;
-      font-size: 1.2rem;
-      font-weight: 300;
-      letter-spacing: 0.5px;
+    .back-btn:hover {
+      background: white;
+      color: #00796b;
     }
+
+    .header-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main content */
     main {
       max-width: 1100px;
       margin: 40px auto;
@@ -52,7 +69,8 @@
       margin-bottom: 20px;
       text-align: justify;
     }
-    .back-btn {
+
+    .back-btn-main {
       display: inline-block;
       background: #009688;
       color: white;
@@ -62,9 +80,10 @@
       font-size: 1rem;
       margin-top: 20px;
     }
-    .back-btn:hover {
+    .back-btn-main:hover {
       background: #00796b;
     }
+
     footer {
       background: #004d40;
       color: #ccc;
@@ -76,9 +95,11 @@
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>Daffodil Hospital</h1>
-    <p>Excellence in Care • Innovation in Treatment</p>
+    <a href="javascript:history.back()" class="back-btn">⬅ Back</a>
+    <a href="https://tanvir210111.github.io/hospital-website/" class="header-title">DAFFODIL HOSPITAL</a>
   </header>
 
   <main>
@@ -97,11 +118,12 @@
     <h2>Committed to Patient-Centered Care</h2>
     <p>At Daffodil Hospital, every decision we make revolves around our patients. We believe in listening, understanding, and treating every individual with dignity and respect. From the moment you step into our hospital to the day you are discharged, our focus is on ensuring a smooth, caring, and transparent healthcare experience.</p>
 
-    <a href="index.html" class="back-btn">← Back to Home</a>
+    
   </main>
 
   <footer>
     © 2025 Tanvir Hossain Khan and CSE 21st Batch, ID: 210111 • All Rights Reserved
   </footer>
+
 </body>
 </html>

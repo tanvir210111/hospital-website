@@ -13,6 +13,42 @@
       background: #f9fafb;
       color: #333;
     }
+
+    /* Header */
+    header {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .back-btn {
+      position: absolute;
+      left: 15px;
+      text-decoration: none;
+      color: #28a745;
+      font-size: 15px;
+      padding: 6px 12px;
+      border: 1px solid #28a745;
+      border-radius: 4px;
+      background: #fff;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #28a745;
+      color: #fff;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #007bff;
+      text-decoration: none;
+    }
+
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -74,10 +110,18 @@
   </style>
 </head>
 <body>
+
+  <!-- Header with Back Button -->
+  <header>
+    <a href="javascript:history.back()" class="back-btn">⬅ Back</a>
+    <a href="https://tanvir210111.github.io/hospital-website/" class="header-title">DAFFODIL HOSPITAL</a>
+  </header>
+
   <div class="container">
     <h1>About Daffodil Hospital</h1>
     <p>
-      At <strong>Daffodil Hospital</strong>, our mission is to provide exceptional healthcare services that combine state-of-the-art medical technology with genuine compassion. We understand that every patient is unique, and we strive to deliver personalized care tailored to each individual’s needs. Our hospital is a trusted destination for patients seeking advanced treatments, a comfortable environment, and a team that truly cares.</p>
+      At <strong>Daffodil Hospital</strong>, our mission is to provide exceptional healthcare services that combine state-of-the-art medical technology with genuine compassion. We understand that every patient is unique, and we strive to deliver personalized care tailored to each individual’s needs. Our hospital is a trusted destination for patients seeking advanced treatments, a comfortable environment, and a team that truly cares.
+    </p>
 
     <h2>Our Facilities</h2>
 
@@ -135,15 +179,15 @@
 
     <h3>Patient Support Services</h3>
     <p>Beyond clinical care, we offer:</p>
-<ul>
-  <li>Nutritional counseling to promote healthy lifestyles.</li>
-  <li>Social work support to assist with personal and family needs.</li>
-  <li>Educational programs to empower patients with knowledge about their health.</li>
-</ul>
+    <ul>
+      <li>Nutritional counseling to promote healthy lifestyles.</li>
+      <li>Social work support to assist with personal and family needs.</li>
+      <li>Educational programs to empower patients with knowledge about their health.</li>
+    </ul>
 
     <h2>Our Commitment to Compassionate Care</h2>
     <p>
-       At <strong> Daffodil Hospital</strong>, we believe that true healing is holistic. It involves addressing not only physical ailments but also emotional and psychological well-being. Our healthcare professionals are dedicated to treating every patient with kindness, respect, and empathy. We foster a caring environment where patients and their families feel supported, heard, and valued.
+      At <strong>Daffodil Hospital</strong>, we believe that true healing is holistic. It involves addressing not only physical ailments but also emotional and psychological well-being. Our healthcare professionals are dedicated to treating every patient with kindness, respect, and empathy. We foster a caring environment where patients and their families feel supported, heard, and valued.
     </p>
     <p>
       Your health journey is important to us — from your first consultation through recovery and beyond, we are here to walk with you every step of the way.
