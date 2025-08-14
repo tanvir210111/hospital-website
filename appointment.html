@@ -9,14 +9,14 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f5f9ff;
       margin: 0;
-      padding: 0 1rem 3rem;
+      padding: 0;
       color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    /* Fixed header with centered title */
+    /* Header */
     header {
       background: #004aad;
       color: white;
@@ -25,14 +25,14 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      height: 60px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
-    /* Updated back button colors */
     .back-btn {
       position: absolute;
       left: 1rem;
-      background: #ff7f50; /* new color */
+      background: #ff7f50;
       color: white;
       font-size: 1rem;
       padding: 6px 12px;
@@ -41,7 +41,7 @@
       transition: background 0.3s;
     }
     .back-btn:hover {
-      background: #ff4500; /* new hover color */
+      background: #ff4500;
     }
 
     .header-title {
@@ -56,15 +56,19 @@
       text-decoration: underline;
     }
 
+    /* Main content */
     main {
       max-width: 900px;
+      width: 100%;
       margin: 2rem auto;
       background: white;
-      padding: 2rem 3rem;
+      padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
       flex: 1;
+      box-sizing: border-box;
     }
+
     h1, h2 {
       color: #004aad;
       margin-bottom: 1rem;
@@ -73,6 +77,22 @@
       margin-top: 2rem;
       font-size: 1.3rem;
     }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    /* Appointment link */
+    .appointment-link {
+      color: #ff4500;
+      text-decoration: underline;
+    }
+    .appointment-link:hover {
+      color: #ff7f50;
+    }
+
+    /* Specialized Departments & Diagnostics */
     ul {
       list-style: none;
       padding-left: 1rem;
@@ -88,28 +108,34 @@
       margin-bottom: 0.2rem;
       font-weight: 700;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+
+    /* Appointment Form Grid */
+    .appointment-table {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem 2rem;
+      max-width: 100%;
     }
-    label {
+    .appointment-table .row {
+      display: contents; /* allows label and input to occupy grid columns */
+    }
+    .appointment-table label {
       font-weight: 600;
-      margin-bottom: 0.3rem;
+      align-self: center;
     }
-    input, select, textarea {
-      padding: 0.5rem;
+    .appointment-table input,
+    .appointment-table select,
+    .appointment-table textarea {
+      width: 100%;
+      padding: 0.6rem;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 1rem;
       font-family: inherit;
+      box-sizing: border-box;
     }
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: #004aad;
-      box-shadow: 0 0 5px #004aad;
-    }
-    button {
+    .appointment-table button {
+      grid-column: 2 / 3;
       background: #004aad;
       color: white;
       font-weight: 700;
@@ -120,11 +146,13 @@
       transition: background 0.3s ease;
       font-size: 1.1rem;
       max-width: 200px;
-      align-self: flex-start;
+      align-self: start;
     }
-    button:hover {
+    .appointment-table button:hover {
       background: #00307d;
     }
+
+    /* Success message */
     .success-message {
       margin-top: 1rem;
       padding: 1rem;
@@ -135,7 +163,7 @@
       display: none;
     }
 
-    /* Footer styling */
+    /* Footer */
     footer {
       background: #004aad;
       color: white;
@@ -143,6 +171,17 @@
       padding: 1rem 2rem;
       font-size: 0.9rem;
       margin-top: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .appointment-table {
+        grid-template-columns: 1fr;
+      }
+      .appointment-table button {
+        grid-column: 1;
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -156,17 +195,6 @@
     <h1>Make an Appointment</h1>
 
     <h2>Before Make an <a href="#book" class="appointment-link">Appointment</a> first see Our Services</h2>
-
-<style>
-  .appointment-link {
-    color: #ff4500; /* new color */
-    text-decoration: underline; /* optional */
-  }
-
-  .appointment-link:hover {
-    color: #ff7f50; /* hover color */
-  }
-</style>
     <p>At <strong>Daffodil Hospital</strong>, we offer a wide range of medical services to cater to the diverse health needs of our community. Our state-of-the-art facilities and highly qualified staff ensure that you receive the best possible care.</p>
     
     <h2>Specialized Departments</h2>
@@ -207,45 +235,53 @@
     </ul>
 
     <h2 id="book">Book Your Appointment</h2>
-    <form id="appointmentForm">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required placeholder="Your full name" />
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required placeholder="Your email" />
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required placeholder="Your phone number" pattern="[0-9]{10,15}" />
-
-      <label for="department">Department</label>
-      <select id="department" name="department" required>
-        <option value="">Select Department</option>
-        <option>Cardiology</option>
-        <option>Neurology</option>
-        <option>Orthopedics</option>
-        <option>Pediatrics</option>
-        <option>Oncology</option>
-        <option>Gynecology & Obstetrics</option>
-        <option>Dermatology</option>
-        <option>Gastroenterology</option>
-        <option>Pulmonology</option>
-        <option>Nephrology</option>
-        <option>Endocrinology</option>
-        <option>Urology</option>
-        <option>ENT</option>
-        <option>Ophthalmology</option>
-        <option>Psychiatry & Mental Health</option>
-        <option>Physical Medicine & Rehabilitation</option>
-        <option>Anesthesiology</option>
-      </select>
-
-      <label for="date">Preferred Date</label>
-      <input type="date" id="date" name="date" required min="" />
-
-      <label for="message">Additional Notes (optional)</label>
-      <textarea id="message" name="message" rows="4" placeholder="Any special requirements or info"></textarea>
-
-      <button type="submit">Submit Appointment</button>
+    <form id="appointmentForm" class="appointment-table">
+      <div class="row">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" />
+      </div>
+      <div class="row">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Your email" />
+      </div>
+      <div class="row">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Your phone number" pattern="[0-9]{10,15}" />
+      </div>
+      <div class="row">
+        <label for="department">Department</label>
+        <select id="department" name="department" required>
+          <option value="">Select Department</option>
+          <option>Cardiology</option>
+          <option>Neurology</option>
+          <option>Orthopedics</option>
+          <option>Pediatrics</option>
+          <option>Oncology</option>
+          <option>Gynecology & Obstetrics</option>
+          <option>Dermatology</option>
+          <option>Gastroenterology</option>
+          <option>Pulmonology</option>
+          <option>Nephrology</option>
+          <option>Endocrinology</option>
+          <option>Urology</option>
+          <option>ENT</option>
+          <option>Ophthalmology</option>
+          <option>Psychiatry & Mental Health</option>
+          <option>Physical Medicine & Rehabilitation</option>
+          <option>Anesthesiology</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date" name="date" required min="" />
+      </div>
+      <div class="row">
+        <label for="message">Additional Notes (optional)</label>
+        <textarea id="message" name="message" rows="4" placeholder="Any special requirements or info"></textarea>
+      </div>
+      <div class="row">
+        <button type="submit">Submit Appointment</button>
+      </div>
     </form>
 
     <div class="success-message" id="successMessage">
@@ -274,6 +310,6 @@
       form.reset();
     });
   </script>
-
+  
 </body>
 </html>
