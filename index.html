@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hospital Management</title>
+  <title>Daffodil Hospital</title>
 
   <script src="https://kit.fontawesome.com/c1df782baf.js" crossorigin="anonymous"></script>
   <link
@@ -15,41 +15,127 @@
     href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
   />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* HEADER STYLES */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: #fff;
+      color: #0d6efd;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* Logo smaller */
+    .logo img {
+      height: 30px;
+      width: 50px;
+    }
+
+    /* Centered title */
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: Left center;
+      flex-grow: 1;
+      color: #0d6efd;
+    }
+
+    /* NAVBAR */
+    nav.navbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav.navbar a {
+      text-decoration: none;
+      color: #0d6efd;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s;
+      font-size: 14px;
+    }
+
+    nav.navbar a:hover {
+      background: #0d6efd;
+      color: #fff;
+    }
+    /* Mobile responsive */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      flex-direction: column;
+      width: 200px;
+      z-index: 200;
+    }
+
+    .mobile-nav a {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    @media(max-width: 900px){
+      nav.navbar {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <h1>
-      <a href="#" target="_blank" rel="noopener noreferrer">Daffodil Hospital</a>
-    </h1>
+    <div class="logo">
+      <img src="images/logo.png" alt="Daffodil Hospital Logo" />
+    </div>
 
-    <nav class="navbar">
+    <div class="header-title">DAFFODIL HOSPITAL</div>
+<nav class="navbar">
+    <a href="#Home">Home</a>
+    <a href="#About">About</a>
+    <a href="#Service">Services</a>
+    <a href="#Gallery">Gallery</a>
+    <a href="#Blog">Blog</a>
+    <a href="#Contact">Contact</a>
+    <a href="doctor-portal.html">Doctor Portal</a>
+    <a href="patient-portal.html">Patient Portal</a>
+    <a href="admin-portal.html">Admin Portal</a>
+  </nav>
+
+    <span class="menu-toggle" onclick="toggleMobileMenu()">☰</span>
+    <div class="mobile-nav" id="mobileNav">
       <a href="#Home">Home</a>
-      <a href="#Home">About</a>
-      <a href="#Home">Service</a>
-      <a href="#Home">Gallery</a>
-      <a href="#Home">Blog</a>
-      <a href="#Home">Contact</a>
-    </nav>
-
-    <div class="right-icons">
-      <div
-        id="menu-bars"
-        class="fas fa-bars"
-        role="button"
-        tabindex="0"
-        aria-label="Toggle menu"
-      ></div>
-
-      <!-- Doctor Portal and Patient Portal as buttons with links -->
-      <a href="doctor-portal.html" class="btn" role="button" aria-label="Go to Doctor Portal"
-        >Doctor Portal</a
-      >
-      <a href="patient-portal.html" class="btn" role="button" aria-label="Go to Patient Portal"
-        >Patient Portal</a
-      >
+      <a href="#About">About</a>
+      <a href="#Service">Services</a>
+      <a href="#Gallery">Gallery</a>
+      <a href="#Blog">Blog</a>
+      <a href="#Contact">Contact</a>
+      <a href="doctor-portal.html">Doctor Portal</a>
+      <a href="patient-portal.html">Patient Portal</a>
+      <a href="admin-portal.html">Admin Portal</a>
     </div>
   </header>
-
+  
   <!-- header section ended -->
 
   <!-- Home section started -->
@@ -58,7 +144,7 @@
     <div class="home">
       <div class="home-left-content">
         <span>Welcome to Daffodil Hospital </span>
-        <h2>Caring First, <br /> Healing Always</h2>
+        <h2>Caring First, <br /> Healing Always.</h2>
         <p class="lorem">
           Your Health is Our Priority. Prioritizing your care with every step
           <br /> we take. Committed to healing you—today, tomorrow & always.
