@@ -15,6 +15,7 @@
     href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
   />
   <link rel="stylesheet" href="style.css" />
+
   <style>
     /* HEADER STYLES */
     header {
@@ -28,24 +29,21 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      flex-wrap: wrap;
     }
 
-    /* Logo smaller */
     .logo img {
       height: 30px;
       width: 50px;
     }
 
-    /* Centered title */
     .header-title {
       font-size: 18px;
       font-weight: bold;
-      text-align: Left center;
-      flex-grow: 1;
       color: #0d6efd;
+      margin-left: 10px;
     }
 
-    /* NAVBAR */
     nav.navbar {
       display: flex;
       align-items: center;
@@ -65,12 +63,11 @@
       background: #0d6efd;
       color: #fff;
     }
-    /* Mobile responsive */
+
     .menu-toggle {
       display: none;
       font-size: 24px;
       cursor: pointer;
-      padding: 5px;
     }
 
     .mobile-nav {
@@ -89,15 +86,32 @@
     .mobile-nav a {
       padding: 10px;
       border-bottom: 1px solid #ccc;
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    .mobile-nav a:hover {
+      background: #0d6efd;
+      color: #fff;
     }
 
     @media(max-width: 900px){
       nav.navbar {
         display: none;
+        width: 100%;
       }
       .menu-toggle {
         display: block;
       }
+      header {
+        justify-content: space-between;
+      }
+    }
+
+    /* HOME SECTION */
+    .home-left-content span {
+      color: #0d6efd;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -110,17 +124,18 @@
     </div>
 
     <div class="header-title">DAFFODIL HOSPITAL</div>
-<nav class="navbar">
-    <a href="#Home">Home</a>
-    <a href="#About">About</a>
-    <a href="#Service">Services</a>
-    <a href="#Gallery">Gallery</a>
-    <a href="#Blog">Blog</a>
-    <a href="#Contact">Contact</a>
-    <a href="doctor-portal.html">Doctor Portal</a>
-    <a href="patient-portal.html">Patient Portal</a>
-    <a href="admin-portal.html">Admin Portal</a>
-  </nav>
+
+    <nav class="navbar">
+      <a href="#Home">Home</a>
+      <a href="#About">About</a>
+      <a href="#Service">Services</a>
+      <a href="#Gallery">Gallery</a>
+      <a href="#Blog">Blog</a>
+      <a href="#Contact">Contact</a>
+      <a href="doctor-portal.html">Doctor Portal</a>
+      <a href="patient-portal.html">Patient Portal</a>
+      <a href="admin-portal.html">Admin Portal</a>
+    </nav>
 
     <span class="menu-toggle" onclick="toggleMobileMenu()">☰</span>
     <div class="mobile-nav" id="mobileNav">
@@ -135,15 +150,12 @@
       <a href="admin-portal.html">Admin Portal</a>
     </div>
   </header>
-  
-  <!-- header section ended -->
 
-  <!-- Home section started -->
-
-  <div class="main-home">
+  <!-- HOME SECTION -->
+  <div class="main-home" id="Home">
     <div class="home">
       <div class="home-left-content">
-        <span>Welcome to Daffodil Hospital </span>
+        <span>Welcome to Daffodil Hospital</span>
         <h2>Caring First, <br /> Healing Always.</h2>
         <p class="lorem">
           Your Health is Our Priority. Prioritizing your care with every step
@@ -156,6 +168,11 @@
         </div>
       </div>
 
+      <div class="home-right-content">
+        <img src="images/hero2.png" alt="Daffodil Hospital Hero Image" />
+      </div>
+    </div>
+  </div>
       <div class="home-right-content">
         <img src="images/hero2.png" alt="Daffodil Hospital Hero Image" />
       </div>
@@ -544,6 +561,18 @@
 <!-- footer ended -->
 
   <script src="script.js"></script>
+ <!-- SCRIPT -->
+  <script>
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      if (mobileNav.style.display === "flex") {
+        mobileNav.style.display = "none";
+      } else {
+        mobileNav.style.display = "flex";
+        mobileNav.style.flexDirection = "column";
+      }
+    }
+  </script>
 
 </body>
 </html>
